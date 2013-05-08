@@ -9,17 +9,17 @@
 		public $toDelete;
 		public $theFile;
 		public $selector;
-		public $rusult = "SUCCESS";
+		public $result = "SUCCESS";
 		
 		function __construct()
 		{
-			if(isset($_GET['siteName'])){ $this->siteName = $_GET['siteName']; $this->theFile = "json/" . $this->siteName . ".json";}
-			if(isset($_GET['serverName'])) { $this->serverName = $_GET['serverName']; }
-			if(isset($_GET['userName'])) { $this->userName = $_GET['userName']; }
-			if(isset($_GET['password'])) { $this->password = $_GET['password']; }
-			if(isset($_GET['toDelete'])) { $this->toDelete = $_GET['toDelete']; }
+			if(isset($_POST['siteName'])){ $this->siteName = $_POST['siteName']; $this->theFile = "json/" . $this->siteName . ".json";}
+			if(isset($_POST['serverName'])) { $this->serverName = $_POST['serverName']; }
+			if(isset($_POST['userName'])) { $this->userName = $_POST['userName']; }
+			if(isset($_POST['password'])) { $this->password = $_POST['password']; }
+			if(isset($_POST['toDelete'])) { $this->toDelete = $_POST['toDelete']; }
 
-			$this->selector = $_GET['selector'];
+			$this->selector = $_POST['selector'];
 			
 			switch($this->selector)
 			{
@@ -74,7 +74,7 @@
 			{
 				$newServerOrSite = array(
 					$this->serverName => array(
-						"serverName" => $this->serverName,
+						"servername" => $this->serverName,
 						"username" => $this->userName,
 						"password" => $this->password
 					)

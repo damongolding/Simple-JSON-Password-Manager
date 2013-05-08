@@ -92,51 +92,8 @@
 	
 	
 	
-	<script src="js/bootstrap.min.js"></script>
-	<script>
-	  $(function () {
-		  
-		$("#myTab li:nth-child(2),.tab-content .tab-pane:first-child").addClass("active");
-		
-		$('#myTab li:not(#editSites) a').click(function (e) {
-		  e.preventDefault();
-		  $(this).tab('show');
-		});
-		
-		$(".hasPop").popover({
-			html : "true",
-			placement : "bottom"
-		})
-				
-		
-		
-		$(document).on("submit","#addSiteBtn",function(){
-			
-			var $this = $(this).children().children(),
-				siteName = $this.eq(0).val(),
-				serverName = $this.eq(1).val(),
-				userName = $this.eq(2).val(),
-				password = $this.eq(3).val();
-				
-				
-			$.ajax({
-				type:"POST",
-				url:"fileHandler.php",
-				data:{"siteName":siteName,"serverName":serverName,"userName":userName,"password":password,"addSite":"true"}
-			})
-		}).ajaxComplete(function(event, xhr, settings){
-			console.log(xhr.responseText);
-			if(xhr.responseText === "EXISTS"){
-				alert("that files already EXISTS");
-			}
-			else if(xhr.responseText === "SUCCESS"){
-				$(".hasPop").popover('hide');
-			}
-		});
-		
-		
-});
-	</script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/app.js" type="text/javascript"></script>
 	
 	
     
