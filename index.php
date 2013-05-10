@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Password manager</title>
     
     <link href="css/style.css" rel="stylesheet" type="text/css">
     
@@ -72,7 +72,13 @@
 								</div>
 							</section>";
 						}
-						echo "</div>";
+						echo "<div class='fluid-row'>
+								<div class='span6 pull-right'>
+										<a class='btn btn-info span6' href='#'>edit</a>
+										<a href='#' class='btn btn-success span6'>+ add</a>
+									</div>
+								</div>
+							</div>";
 					}
 			    ?>
 	  </div>

@@ -30,6 +30,7 @@ class login
 	
 	private function loginIncoreect()
 	{
+		$error = true;
 		include("loginForm.php");
 	}
 }

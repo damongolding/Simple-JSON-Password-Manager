@@ -117,7 +117,7 @@ var app = {
 	ajaxCall:function(selector,siteName,serverName,userName,password){
 		$.ajax({
 			type:"POST",
-			url:"class/fileHandler.php",
+			url:"class/fileHandler.class.php",
 			data:{
 				"siteName":siteName,
 				"serverName":serverName,
