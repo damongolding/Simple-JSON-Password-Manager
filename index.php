@@ -26,7 +26,6 @@
 			<li id="editSites" class="row-fluid">
 				<a id="editBtn" class="btn btn-info span6" href="#">edit</a>
 				<a href="#" id="addSite" class=" hasPop btn btn-success span6" data-toggle="popover" title="" data-content='<form id="addSiteBtn"><fieldset><input required="required" type="text" placeholder="SiteName" class="sitename"><input required="required" type="text" placeholder="Server name" class="servername"><input required="required" type="text" placeholder="Username" class="username"><input required="required" type="text" placeholder="Password" class="password"><button type="submit" class="btn">Submit</button></fieldset></form>' data-original-title="add a site">+ add</a>
-			<!-- <a class="btn btn-success span6" href="#">+ add</a> -->			
 			</li>
 			<?php 
 			
