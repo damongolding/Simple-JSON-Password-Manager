@@ -14,11 +14,7 @@
 	<header class="navbar">
 		<div class="navbar-inner">
 			<a href="#" class="brand">Password Manager</a>
-			<ul class="nav">
-			  <!--  <li class="active"><a href="#">Home</a></li>
-			  <li><a href="#">Link</a></li>
-			  <li><a href="#">Link</a></li>
-			</ul> -->
+
 		</div>
 	</header>
 	
@@ -28,7 +24,7 @@
 		<div id="siteList" class="span3">
 		  <ul class="nav" id="myTab">
 			<li id="editSites" class="row-fluid">
-				<a class="btn btn-info span6" href="#">edit</a>
+				<a id="editBtn" class="btn btn-info span6" href="#">edit</a>
 				<a href="#" id="addSite" class=" hasPop btn btn-success span6" data-toggle="popover" title="" data-content='<form id="addSiteBtn"><fieldset><input required="required" type="text" placeholder="SiteName" class="sitename"><input required="required" type="text" placeholder="Server name" class="servername"><input required="required" type="text" placeholder="Username" class="username"><input required="required" type="text" placeholder="Password" class="password"><button type="submit" class="btn">Submit</button></fieldset></form>' data-original-title="add a site">+ add</a>
 			<!-- <a class="btn btn-success span6" href="#">+ add</a> -->			
 			</li>
@@ -41,15 +37,10 @@
 
 					$siteName = basename($file, ".json"); 
 			
-					echo "<li><a href='#" . $siteName . "'>" . $siteName ."</a></li>";
+					echo "<li><a href='#" . $siteName . "'>" . $siteName ."<i class='icon-minus-sign'></i></a></li>";
 				} 
 					
 			?>
-
-		    <!-- <li class="active"><a href="#home">other</a></li>
-		    <li><a href="#profile">Streamline</a></li>
-		    <li><a href="#messages">Tetris</a></li>
-		    <li><a href="#settings">blah</a></li> -->
 		  </ul>
 		</div>
 		<!-- content -->
@@ -63,9 +54,7 @@
 				    $data = json_decode($JSON,true); 
 				    
 				    $siteName = basename($file, ".json"); 
-				    
-			    	
-				    	
+
 			    	echo "<div class='tab-pane' id='" . $siteName . "'>";
 				    	
 				    foreach($data as $server){

@@ -2,14 +2,15 @@
 
 	class FileHandler
 	{
-		public $siteName;
-		public $serverName;
-		public $userName;
-		public $password;
-		public $toDelete;
-		public $theFile;
-		public $selector;
-		public $result = "SUCCESS";
+		private $siteName;
+		private $serverName;
+		private $userName;
+		private $password;
+		private $toDelete;
+		private $theFile;
+		private $selector;
+		private $responce;
+		private $result = "SUCCESS";
 		
 		function __construct()
 		{
@@ -39,23 +40,31 @@
 					$this->deleteServer();
 					break;
 			}
-				
-
 		}
-		public function __destruct()
+		
+		function __destruct()
 		{
-			echo $this->result;
+			echo json_encode(
+				$this->responce = array(
+					"selector" => $this->selector,
+					"sitename" => $this->siteName,
+					"servername" => $this->serverName,
+					"username" => $this->userName,
+					"password" => $this->password,
+					"result" => $this->result
+				)
+			);
 		}
 		
 		// get raw file data
-		public function getFileData()
+		private function getFileData()
 		{
 			$JSON = file_get_contents($this->theFile,true);
 			return $rawData = json_decode($JSON,true); 
 		}
 		
 		// save file with new content
-		public function saveFile($newContent)
+		private function saveFile($newContent)
 		{
 			$contentToSave = json_encode($newContent);
 			$openFile = fopen($this->theFile,"w");
